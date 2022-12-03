@@ -1,4 +1,5 @@
-# split string in two/ compare for same char/ find weight of char/add up all weights
+# Part 1: split string in two/ compare for same char/ find weight of char/add up all weights
+# Part 2: each group of three contain the same char, find and point. then add together
 
 def stringCompare(string1, string2):
     my_str = ''
