@@ -27,8 +27,15 @@ with open('2022/data/dayThreeData.txt', 'r') as file:
     
 totalWeight = 0
 weight = []
-        
+count = 1
+bagCheck = []
+bagChackGroup = []
 for bag in data:
+    if count > 3:
+        bagCheck.append(bagChackGroup)
+        bagChackGroup = []
+        count = 1
+    bagChackGroup.append(bag)
     firstpart, secondpart = bag[:len(bag)//2], bag[len(bag)//2:]
     sameChar = ''
     for fChar in firstpart:
@@ -37,6 +44,7 @@ for bag in data:
                  sameChar = fChar
     
     weight.append(getCharWeight(sameChar))
+    count+=1
 
 for w in weight:
     totalWeight += w
@@ -44,3 +52,5 @@ for w in weight:
 
 print(weight)
 print(totalWeight)
+
+print (bagCheck)
