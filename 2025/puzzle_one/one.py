@@ -22,7 +22,7 @@ class Dial():
     def read_dial(self):
         return self.dial[self.current_index]
 
-def solve(raw_instructions_filename):
+def solve(raw_instructions_filename, verbose = False):
     inputs = read_file(raw_instructions_filename)
     
     dial = Dial(100, 50)
@@ -31,18 +31,14 @@ def solve(raw_instructions_filename):
 
     instructions = extract_instructions(inputs)
 
-    print(f"Starting {dial}")
     for instruction in instructions:
-        print(f"{dial}")
         dial.move_dial(instruction)
         if dial.read_dial() ==  0:
             zero_count += 1
-        print(f"{dial}")
-        print("-----------------------")
 
-    
-    print(f"Password = {zero_count}")
-    print(f"Updated Password = {zero_count + rotations}")
+    if verbose:
+        print(f"Password = {zero_count}")
+        print(f"Updated Password = {zero_count + rotations}")
 
 def extract_instructions(input):
     iterable_instructions = input.split("\n")

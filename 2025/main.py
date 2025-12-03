@@ -1,8 +1,8 @@
 
-from puzzle_one import puzzle
+from puzzle_one import one
 
 def main():  
-    puzzle.solve("./puzzle_one/puzzle_one_actual.txt")
+    one.solve("./puzzle_one/puzzle_one_actual.txt", True)
 
     
 
